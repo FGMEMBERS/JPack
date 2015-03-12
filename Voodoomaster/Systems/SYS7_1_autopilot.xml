@@ -535,11 +535,11 @@
 					<equals>
 						<property>/autopilot/locks/altitude</property>
 						<value>gs1-hold</value>
-					<equals>
+					</equals>
 					<equals>
 						<property>/instrumentation/nav[0]/gs-in-range</property>
 						<value>true</value>
-					<equals>
+					</equals>
 				</and>
 			</condition>
 		</enable>
@@ -574,11 +574,11 @@
 					<equals>
 						<property>/autopilot/locks/altitude</property>
 						<value>gs1-hold</value>
-					<equals>
+					</equals>
 					<equals>
 						<property>/instrumentation/nav[0]/gs-in-range</property>
 						<value>false</value>
-					<equals>
+					</equals>
 				</and>
 			</condition>
 		</enable>
