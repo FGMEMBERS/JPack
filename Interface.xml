@@ -4,7 +4,7 @@
 
 		<menubar>
 			<default>
-				<menu n="100">
+				<menu n="101">
 					<label>Voodoomaster</label>
 					<enabled type="bool">true</enabled>
 
@@ -50,7 +50,7 @@
 						</binding>
 					</item>
 				</menu>
-				<menu n="101">
+				<menu n="102">
 					<label>SkyNet</label>
 					<enabled type="bool">true</enabled>
 	
