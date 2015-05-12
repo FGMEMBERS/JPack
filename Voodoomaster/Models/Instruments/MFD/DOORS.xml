@@ -11,7 +11,7 @@
 		<object-name>doors</object-name>
 		<condition>
 			<greater-than>
-				<property>systems/electrical/outputs/efis</property>
+				<property>systems/electrical/outputs/bus</property>
 				<value>9</value>
 			</greater-than>
 		</condition>

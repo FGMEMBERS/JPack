@@ -4,20 +4,20 @@
 
 	<path>pneu.ac</path>
 
-<!-- Come on only when there's atleast 9 volts of power -->
+	<!-- Come on only when there's atleast 9 volts of power -->
 
 	<animation>
 		<type>select</type>
 		<object-name>pneu</object-name>
 		<condition>
 			<greater-than>
-				<property>systems/electrical/outputs/efis</property>
+				<property>systems/electrical/outputs/bus</property>
 				<value>9</value>
 			</greater-than>
 		</condition>
 	</animation>
 
-<!-- Light Text -->
+	<!-- Light Text -->
 
 	<animation>
 		<name>White text</name>
@@ -30,7 +30,7 @@
 		</emission>
 	</animation>
 
-<!-- Temperatures -->
+	<!-- Temperatures -->
 
 	<text><name>white</name>
 		<offsets>

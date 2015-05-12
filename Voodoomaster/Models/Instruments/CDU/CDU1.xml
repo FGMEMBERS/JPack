@@ -5,6 +5,7 @@
 	<path>cdu.ac</path>
 
 	<!-- Come on only when there's atleast 9 volts of power -->
+
 	<animation>
 		<type>select</type>
 		<object-name>cdu</object-name>
@@ -66,8 +67,7 @@
 	</text>
 
 	<!-- Active Typing -->
-	<text>
-		<name>text</name>
+	<text><name>text</name>
 		<offsets>
 			<x-m>0.0100</x-m>
 			<y-m>0</y-m>
@@ -91,9 +91,9 @@
 		</font-resolution>
 	</text>
 
-
-<!-- Left Side Labels -->
-	<text><name>text</name>
+	<!-- Left Side Labels -->
+	<text>
+		<name>text</name>
 		<offsets>
 			<x-m>-0.0918</x-m>
 			<y-m>-0.065</y-m>
@@ -236,7 +236,8 @@
 		</font-resolution>
 	</text>
 
-	<text><name>text</name>
+	<text>
+		<name>text</name>
 		<offsets>
 			<x-m>-0.01</x-m>
 			<y-m>-0.065</y-m>
@@ -333,7 +334,8 @@
 		</font-resolution>
 	</text>
 
-	<text><name>text</name>
+	<text>
+		<name>text</name>
 		<offsets>
 			<x-m>-0.0504</x-m>
 			<y-m>0.065</y-m>
@@ -430,8 +432,7 @@
 
 	<!-- Left Side Values -->
 
-	<text>
-		<name>text</name>
+	<text><name>text</name>
 		<offsets>
 			<x-m>-0.0849</x-m>
 			<y-m>-0.06</y-m>
@@ -478,8 +479,7 @@
 		</font-resolution>
 	</text>
 
-	<text>
-		<name>text</name>
+	<text><name>text</name>
 		<offsets>
 			<x-m>-0.0577</x-m>
 			<y-m>-0.06</y-m>
@@ -624,7 +624,8 @@
 		</font-resolution>
 	</text>
 
-	<text><name>text</name>
+	<text>
+		<name>text</name>
 		<offsets>
 			<x-m>-0.0715</x-m>
 			<y-m>0.06</y-m>
@@ -767,7 +768,7 @@
 		</font-resolution>
 	</text>
 
-	<!-- Clickability according to field type -->
+	<!-- Clickablity according to field type -->
 
 	<animation>
 		<type>select</type>
@@ -926,9 +927,9 @@
 	<!-- Menu Presses -->
 
 	<animation>
-		<type>pick</type>
-		<object-name>l1</object-name>
-		<action>
+	        <type>pick</type>
+	        <object-name>l1</object-name>
+	        <action>
 			<button>0</button>
 			<binding>
 				<command>property-cycle</command>
@@ -939,22 +940,22 @@
 	</animation>
 
 	<animation>
-		<type>pick</type>
-		<object-name>l2</object-name>
-		<action>
+	        <type>pick</type>
+	        <object-name>l2</object-name>
+	        <action>
 			<button>0</button>
 			<binding>
-				<command>property-cycle</command>
-				<property>controls/cdu/keypress</property>
+		                <command>property-cycle</command>
+		                <property>controls/cdu/keypress</property>
 				<value>l2</value>
 			</binding>
-		</action>
+        	</action>
 	</animation>
 
 	<animation>
-	        <type>pick</type>
-	        <object-name>l3</object-name>
-	        <action>
+		<type>pick</type>
+		<object-name>l3</object-name>
+		<action>
 			<button>0</button>
 			<binding>
 				<command>property-cycle</command>
@@ -1004,13 +1005,13 @@
 	</animation>
 
 	<animation>
-		<type>pick</type>
-		<object-name>l7</object-name>
-		<action>
+	        <type>pick</type>
+	        <object-name>l7</object-name>
+	        <action>
 			<button>0</button>
-			<binding>
-				<command>property-cycle</command>
-				<property>controls/cdu/keypress</property>
+        		<binding>
+        			<command>property-cycle</command>
+        			<property>controls/cdu/keypress</property>
 				<value>l7</value>
 			</binding>
 		</action>
@@ -1030,10 +1031,10 @@
 	</animation>
 
 	<animation>
-	        <type>pick</type>
-	        <object-name>r2</object-name>
-	        <action>
-			<button>0</button>
+        	<type>pick</type>
+        	<object-name>r2</object-name>
+        	<action>
+        		<button>0</button>
 			<binding>
 				<command>property-cycle</command>
 				<property>controls/cdu/keypress</property>
@@ -1043,9 +1044,9 @@
 	</animation>
 
 	<animation>
-		<type>pick</type>
-		<object-name>r3</object-name>
-		<action>
+	        <type>pick</type>
+	        <object-name>r3</object-name>
+	        <action>
 			<button>0</button>
 			<binding>
 				<command>property-cycle</command>
@@ -1119,25 +1120,25 @@
 				<property>controls/cdu/display/page</property>
 				<value>INDEX</value>
 			</binding>
-		</action>
+        	</action>
 	</animation>
     
 	<animation>
-		<type>pick</type>
-		<object-name>rte</object-name>
-		<action>
+	        <type>pick</type>
+	        <object-name>rte</object-name>
+	        <action>
 			<button>0</button>
-			<binding>
-				<command>property-cycle</command>
-				<property>controls/cdu/display/page</property>
+        		<binding>
+        			<command>property-cycle</command>
+        			<property>controls/cdu/display/page</property>
 				<value>ROUTE</value>
-			</binding>
-		</action>
+        		</binding>
+        	</action>
 	</animation>
     
 	<animation>
-		<type>pick</type>
-		<object-name>ident</object-name>
+	        <type>pick</type>
+	        <object-name>ident</object-name>
 		<action>
 			<button>0</button>
 			<binding>
@@ -1169,7 +1170,7 @@
 		<type>pick</type>
 		<object-name>back</object-name>
 		<action>
-			<button>0</button>
+	        	<button>0</button>
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-adjust</command>
@@ -1177,7 +1178,7 @@
 				<step type="double">-1</step>
 				<min>1</min>
 			</binding>
-		</action>
+       		</action>
 	</animation>
     
 	<!-- While clicking -->
@@ -1338,751 +1339,756 @@
 
 	<!-- Help Box Stuff -->
 
-	<animation>
-		<type>select</type>
-		<object-name>select.0</object-name>
-		<condition>
-			<equals>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>0</value>
-			</equals>
-		</condition>
-	</animation>
+<animation>
+	<type>select</type>
+	<object-name>select.0</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/fmcHelp/selected</property>
+			<value>0</value>
+		</equals>
+	</condition>
+</animation>
 
-	<animation>
-		<type>select</type>
-		<object-name>select.1</object-name>
-		<condition>
-			<equals>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>1</value>
-			</equals>
-		</condition>
-	</animation>
+<animation>
+	<type>select</type>
+	<object-name>select.1</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/fmcHelp/selected</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
 
-	<animation>
-		<type>select</type>
-		<object-name>select.2</object-name>
-		<condition>
-			<equals>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>2</value>
-			</equals>
-		</condition>
-	</animation>
+<animation>
+	<type>select</type>
+	<object-name>select.2</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/fmcHelp/selected</property>
+			<value>2</value>
+		</equals>
+	</condition>
+</animation>
 
-	<animation>
-		<type>select</type>
-		<object-name>select.3</object-name>
-		<condition>
-			<equals>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>3</value>
-			</equals>
-		</condition>
-	</animation>
+<animation>
+	<type>select</type>
+	<object-name>select.3</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/fmcHelp/selected</property>
+			<value>3</value>
+		</equals>
+	</condition>
+</animation>
 
-	<animation>
-		<type>select</type>
-		<object-name>select.4</object-name>
-		<condition>
-			<equals>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>4</value>
-			</equals>
-		</condition>
-	</animation>
+<animation>
+	<type>select</type>
+	<object-name>select.4</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/fmcHelp/selected</property>
+			<value>4</value>
+		</equals>
+	</condition>
+</animation>
 
-	<animation>
-		<type>select</type>
-		<object-name>select.5</object-name>
-		<condition>
-			<equals>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>5</value>
-			</equals>
-		</condition>
-	</animation>
+<animation>
+	<type>select</type>
+	<object-name>select.5</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/fmcHelp/selected</property>
+			<value>5</value>
+		</equals>
+	</condition>
+</animation>
 
-	<animation>
-		<type>select</type>
-		<object-name>select.6</object-name>
-		<condition>
-			<equals>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>6</value>
-			</equals>
-		</condition>
-	</animation>
+<animation>
+	<type>select</type>
+	<object-name>select.6</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/fmcHelp/selected</property>
+			<value>6</value>
+		</equals>
+	</condition>
+</animation>
 
-	<animation>
-		<type>select</type>
-		<object-name>select.7</object-name>
-		<condition>
-			<equals>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>7</value>
-			</equals>
-		</condition>
-	</animation>
+<animation>
+	<type>select</type>
+	<object-name>select.7</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/fmcHelp/selected</property>
+			<value>7</value>
+		</equals>
+	</condition>
+</animation>
 
-	<animation>
-		<type>pick</type>
-		<object-name>select.0.click</object-name>
-		<action>
-			<button>0</button>
-			<binding>
-				<command>property-cycle</command>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>0</value>
-			</binding>
-		</action>
-	</animation>
+<animation>
+    <type>pick</type>
+    <object-name>select.0.click</object-name>
+    <action>
+        <button>0</button>
+        <binding>
+            <command>property-cycle</command>
+            <property>instrumentation/fmcHelp/selected</property>
+			<value>0</value>
+		</binding>
+    </action>
+</animation>
 
-	<animation>
-		<type>pick</type>
-		<object-name>select.1.click</object-name>
-		<action>
-			<button>0</button>
-			<binding>
-				<command>property-cycle</command>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>1</value>
-			</binding>
-		</action>
-	</animation>
+<animation>
+    <type>pick</type>
+    <object-name>select.1.click</object-name>
+    <action>
+        <button>0</button>
+        <binding>
+            <command>property-cycle</command>
+            <property>instrumentation/fmcHelp/selected</property>
+			<value>1</value>
+		</binding>
+    </action>
+</animation>
 
-	<animation>
-		<type>pick</type>
-		<object-name>select.2.click</object-name>
-		<action>
-			<button>0</button>
-			<binding>
-				<command>property-cycle</command>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>2</value>
-			</binding>
-		</action>
-	</animation>
+<animation>
+    <type>pick</type>
+    <object-name>select.2.click</object-name>
+    <action>
+        <button>0</button>
+        <binding>
+            <command>property-cycle</command>
+            <property>instrumentation/fmcHelp/selected</property>
+			<value>2</value>
+		</binding>
+    </action>
+</animation>
 
-	<animation>
-		<type>pick</type>
-		<object-name>select.3.click</object-name>
-		<action>
-			<button>0</button>
-			<binding>
-				<command>property-cycle</command>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>3</value>
-			</binding>
-		</action>
-	</animation>
+<animation>
+    <type>pick</type>
+    <object-name>select.3.click</object-name>
+    <action>
+        <button>0</button>
+        <binding>
+            <command>property-cycle</command>
+            <property>instrumentation/fmcHelp/selected</property>
+			<value>3</value>
+		</binding>
+    </action>
+</animation>
 
-	<animation>
-		<type>pick</type>
-		<object-name>select.4.click</object-name>
-		<action>
-			<button>0</button>
-			<binding>
-				<command>property-cycle</command>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>4</value>
-			</binding>
-		</action>
-	</animation>
+<animation>
+    <type>pick</type>
+    <object-name>select.4.click</object-name>
+    <action>
+        <button>0</button>
+        <binding>
+            <command>property-cycle</command>
+            <property>instrumentation/fmcHelp/selected</property>
+			<value>4</value>
+		</binding>
+    </action>
+</animation>
 
-	<animation>
-		<type>pick</type>
-		<object-name>select.5.click</object-name>
-		<action>
-			<button>0</button>
-			<binding>
-				<command>property-cycle</command>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>5</value>
-			</binding>
-		</action>
-	</animation>
+<animation>
+    <type>pick</type>
+    <object-name>select.5.click</object-name>
+    <action>
+        <button>0</button>
+        <binding>
+            <command>property-cycle</command>
+            <property>instrumentation/fmcHelp/selected</property>
+			<value>5</value>
+		</binding>
+    </action>
+</animation>
 
-	<animation>
-		<type>pick</type>
-		<object-name>select.6.click</object-name>
-		<action>
-			<button>0</button>
-			<binding>
-				<command>property-cycle</command>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>6</value>
-			</binding>
-		</action>
-	</animation>
+<animation>
+    <type>pick</type>
+    <object-name>select.6.click</object-name>
+    <action>
+        <button>0</button>
+        <binding>
+            <command>property-cycle</command>
+            <property>instrumentation/fmcHelp/selected</property>
+			<value>6</value>
+		</binding>
+    </action>
+</animation>
 
-	<animation>
-		<type>pick</type>
-		<object-name>select.7.click</object-name>
-		<action>
-			<button>0</button>
-			<binding>
-				<command>property-cycle</command>
-				<property>instrumentation/fmcHelp/selected</property>
-				<value>7</value>
-			</binding>
-		</action>
-	</animation>
+<animation>
+    <type>pick</type>
+    <object-name>select.7.click</object-name>
+    <action>
+        <button>0</button>
+        <binding>
+            <command>property-cycle</command>
+            <property>instrumentation/fmcHelp/selected</property>
+			<value>7</value>
+		</binding>
+    </action>
+</animation>
 
-	<animation>
-		<type>pick</type>
-		<object-name>help</object-name>
-		<object-name>helpp</object-name>
-		<action>
-			<button>0</button>
-			<binding>
-				<command>property-toggle</command>
-				<property>instrumentation/fmcHelp/show</property>
-			</binding>
-		</action>
-	</animation>
+<animation>
+    <type>pick</type>
+    <object-name>help</object-name>
+    <object-name>helpp</object-name>
+    <action>
+        <button>0</button>
+        <binding>
+            <command>property-toggle</command>
+            <property>instrumentation/fmcHelp/show</property>
+        </binding>
+    </action>
+</animation>
 
-	<animation>
-		<type>select</type>
-		<object-name>help_box</object-name>
-		<object-name>search</object-name>
-		<object-name>select</object-name>
-		<object-name>search.active</object-name>
-		<object-name>search.click</object-name>
-		<object-name>select.0</object-name>
-		<object-name>select.1</object-name>
-		<object-name>select.2</object-name>
-		<object-name>select.3</object-name>
-		<object-name>select.4</object-name>
-		<object-name>select.5</object-name>
-		<object-name>select.6</object-name>
-		<object-name>select.7</object-name>
-		<object-name>select.0.click</object-name>
-		<object-name>select.1.click</object-name>
-		<object-name>select.2.click</object-name>
-		<object-name>select.3.click</object-name>
-		<object-name>select.4.click</object-name>
-		<object-name>select.5.click</object-name>
-		<object-name>select.6.click</object-name>
-		<object-name>select.7.click</object-name>
-		<condition>
-			<equals>
-				<property>instrumentation/fmcHelp/show</property>
-				<value>1</value>
-			</equals>
-		</condition>
-	</animation>
+<animation>
+	<type>select</type>
+	<object-name>help_box</object-name>
+	<object-name>search</object-name>
+	<object-name>select</object-name>
+	<object-name>search.active</object-name>
+	<object-name>search.click</object-name>
+	<object-name>select.0</object-name>
+	<object-name>select.1</object-name>
+	<object-name>select.2</object-name>
+	<object-name>select.3</object-name>
+	<object-name>select.4</object-name>
+	<object-name>select.5</object-name>
+	<object-name>select.6</object-name>
+	<object-name>select.7</object-name>
+	<object-name>select.0.click</object-name>
+	<object-name>select.1.click</object-name>
+	<object-name>select.2.click</object-name>
+	<object-name>select.3.click</object-name>
+	<object-name>select.4.click</object-name>
+	<object-name>select.5.click</object-name>
+	<object-name>select.6.click</object-name>
+	<object-name>select.7.click</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/fmcHelp/show</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
 
-	<animation>
-		<type>pick</type>
-		<object-name>search.active</object-name>
-		<object-name>search.click</object-name>
-		<action>
-			<button>0</button>
-			<binding>
-				<command>property-toggle</command>
-				<property>instrumentation/fmcHelp/search/active</property>
-			</binding>
-		</action>
-	</animation>
+<animation>
+    <type>pick</type>
+    <object-name>search.active</object-name>
+    <object-name>search.click</object-name>
+    <action>
+        <button>0</button>
+        <binding>
+            <command>property-toggle</command>
+            <property>instrumentation/fmcHelp/search/active</property>
+        </binding>
+    </action>
+</animation>
 
-	<animation>
-		<type>select</type>
-		<object-name>search.active</object-name>
-		<condition>
-			<equals>
-				<property>instrumentation/fmcHelp/search/active</property>
-				<value>1</value>
-			</equals>
-		</condition>
-	</animation>
+<animation>
+	<type>select</type>
+	<object-name>search.active</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/fmcHelp/search/active</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
 
-	<animation>
-		<type>pick</type>
-		<object-name>search</object-name>
-		<action>
-			<button>0</button>
-			<binding>
-				<command>nasal</command>
-				<script>
-					b767.fmcHelp.search(0, getprop("/instrumentation/fmcHelp/search/input"));
-            			</script>
-			</binding>
-		</action>
-	</animation>
+<animation>
+    <type>pick</type>
+    <object-name>search</object-name>
+    <action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+            <script>
+            	b787.fmcHelp.search(0, getprop("/instrumentation/fmcHelp/search/input"));
+            </script>
+        </binding>
+    </action>
+</animation>
 
-	<animation>
-		<type>pick</type>
-		<object-name>select</object-name>
-		<action>
-			<button>0</button>
-			<binding>
-				<command>nasal</command>
-				<script>
-					b767.fmcHelp.select(0, getprop("/instrumentation/fmcHelp/first") + getprop("/instrumentation/fmcHelp/selected"));
-				</script>
-			</binding>
-		</action>
-	</animation>
+<animation>
+    <type>pick</type>
+    <object-name>select</object-name>
+    <action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+            <script>
+            	b787.fmcHelp.select(0, getprop("/instrumentation/fmcHelp/first") + getprop("/instrumentation/fmcHelp/selected"));
+            </script>
+        </binding>
+    </action>
+</animation>
 
-	<text>
-		<name>text</name>
-		<offsets>
-			<x-m>0.0658</x-m>
-			<y-m>-0.0766</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/search/input</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.006</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text</name>
+	<offsets>
+		<x-m>0.0658</x-m>
+		<y-m>-0.0766</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/search/input</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.006</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<text>
-		<name>text</name>
-		<offsets>
-			<x-m>0.0785</x-m>
-			<y-m>-0.0753</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[0]/string</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.006</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text</name>
+	<offsets>
+		<x-m>0.0785</x-m>
+		<y-m>-0.0753</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[0]/string</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.006</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<text>
-		<name>text</name>
-		<offsets>
-			<x-m>0.0849</x-m>
-			<y-m>-0.0753</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[1]/string</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.006</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text</name>
+	<offsets>
+		<x-m>0.0849</x-m>
+		<y-m>-0.0753</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[1]/string</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.006</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<text>
-		<name>text</name>
-		<offsets>
-			<x-m>0.0911</x-m>
-			<y-m>-0.0753</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[2]/string</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.006</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text</name>
+	<offsets>
+		<x-m>0.0911</x-m>
+		<y-m>-0.0753</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[2]/string</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.006</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<text>
-		<name>text</name>
-		<offsets>
-			<x-m>0.0975</x-m>
-			<y-m>-0.0753</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[3]/string</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.006</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text</name>
+	<offsets>
+		<x-m>0.0975</x-m>
+		<y-m>-0.0753</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[3]/string</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.006</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<text>
-		<name>text</name>
-		<offsets>
-			<x-m>0.1039</x-m>
-			<y-m>-0.0753</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[4]/string</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.006</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text</name>
+	<offsets>
+		<x-m>0.1039</x-m>
+		<y-m>-0.0753</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[4]/string</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.006</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<text>
-		<name>text</name>
-		<offsets>
-			<x-m>0.1103</x-m>
-			<y-m>-0.0753</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[5]/string</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.006</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text</name>
+	<offsets>
+		<x-m>0.1103</x-m>
+		<y-m>-0.0753</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[5]/string</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.006</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<text>
-		<name>text</name>
-		<offsets>
-			<x-m>0.1165</x-m>
-			<y-m>-0.0753</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[6]/string</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.006</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text</name>
+	<offsets>
+		<x-m>0.1165</x-m>
+		<y-m>-0.0753</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[6]/string</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.006</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<text>
-		<name>text</name>
-		<offsets>
-			<x-m>0.1228</x-m>
-			<y-m>-0.0753</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[7]/string</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.006</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text</name>
+	<offsets>
+		<x-m>0.1228</x-m>
+		<y-m>-0.0753</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[7]/string</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.006</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<animation>
-		<type>pick</type>
-		<object-name>cdu_up</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>1</repeatable>
-			<binding>
-				<command>nasal</command>
-				<script>
-					var first = getprop("/instrumentation/fmcHelp/first");
-					if (first != 0) setprop("/instrumentation/fmcHelp/first", first - 1);
-					b767.fmcHelp.update(0);
-				</script>
-			</binding>
-		</action>
-	</animation>
+<animation>
+    <type>pick</type>
+    <object-name>cdu_up</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>1</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>
+            	var first = getprop("/instrumentation/fmcHelp/first");
+            	
+            	if (first != 0)
+            		setprop("/instrumentation/fmcHelp/first", first - 1);
+            		
+            	b787.fmcHelp.update(0);
+            </script>
+        </binding>
+    </action>
+</animation>
 
-	<animation>
-		<type>pick</type>
-		<object-name>cdu_down</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>1</repeatable>
-			<binding>
-				<command>nasal</command>
-				<script>
-					var first = getprop("/instrumentation/fmcHelp/first");
-					setprop("/instrumentation/fmcHelp/first", first + 1);
-					b767.fmcHelp.update(0);
-				</script>
-			</binding>
-		</action>
-	</animation>
+<animation>
+    <type>pick</type>
+    <object-name>cdu_down</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>1</repeatable>
+        <binding>
+            <command>nasal</command>
+            <script>
+            	var first = getprop("/instrumentation/fmcHelp/first");
+            	
+           		setprop("/instrumentation/fmcHelp/first", first + 1);
+            		
+            	b787.fmcHelp.update(0);
+            </script>
+        </binding>
+    </action>
+</animation>
 
-	<text>
-		<name>text_grey</name>
-		<offsets>
-			<x-m>0.0785</x-m>
-			<y-m>-0.0358</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[0]/desc</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.005</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text_grey</name>
+	<offsets>
+		<x-m>0.0785</x-m>
+		<y-m>-0.0358</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[0]/desc</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<text>
-		<name>text_grey</name>
-		<offsets>
-			<x-m>0.0849</x-m>
-			<y-m>-0.0358</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[1]/desc</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.005</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text_grey</name>
+	<offsets>
+		<x-m>0.0849</x-m>
+		<y-m>-0.0358</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[1]/desc</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<text>
-		<name>text_grey</name>
-		<offsets>
-			<x-m>0.0911</x-m>
-			<y-m>-0.0358</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[2]/desc</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.005</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text_grey</name>
+	<offsets>
+		<x-m>0.0911</x-m>
+		<y-m>-0.0358</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[2]/desc</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<text>
-		<name>text_grey</name>
-		<offsets>
-			<x-m>0.0975</x-m>
-			<y-m>-0.0358</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[3]/desc</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.005</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text_grey</name>
+	<offsets>
+		<x-m>0.0975</x-m>
+		<y-m>-0.0358</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[3]/desc</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<text>
-		<name>text_grey</name>
-		<offsets>
-			<x-m>0.1039</x-m>
-			<y-m>-0.0358</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[4]/desc</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.005</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text_grey</name>
+	<offsets>
+		<x-m>0.1039</x-m>
+		<y-m>-0.0358</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[4]/desc</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<text>
-		<name>text_grey</name>
-		<offsets>
-			<x-m>0.1103</x-m>
-			<y-m>-0.0358</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[5]/desc</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.005</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text_grey</name>
+	<offsets>
+		<x-m>0.1103</x-m>
+		<y-m>-0.0358</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[5]/desc</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<text>
-		<name>text_grey</name>
-		<offsets>
-			<x-m>0.1165</x-m>
-			<y-m>-0.0358</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[6]/desc</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.005</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text_grey</name>
+	<offsets>
+		<x-m>0.1165</x-m>
+		<y-m>-0.0358</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[6]/desc</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
-	<text>
-		<name>text_grey</name>
-		<offsets>
-			<x-m>0.1228</x-m>
-			<y-m>-0.0358</y-m>
-			<z-m>0.0014</z-m>
-			<heading-deg>90</heading-deg>
-		</offsets>
-		<alignment>left-center</alignment>
-		<axis-alignment>xy-plane</axis-alignment>
-		<type type="string">text-value</type>
-		<format type="string">%s</format>
-		<property>/instrumentation/fmcHelp/disp[7]/desc</property>
-		<truncate type="bool">false</truncate>
-		<font type="string">Helvetica.txf</font>
-		<draw-text type="bool">true</draw-text>
-		<draw-alignment type="bool">false</draw-alignment>
-		<draw-boundingbox type="bool">false</draw-boundingbox>
-		<character-size>0.005</character-size>
-		<font-resolution>
-			<width type="int">32</width>
-			<height type="int">32</height>
-		</font-resolution>
-	</text>
+<text>
+	<name>text_grey</name>
+	<offsets>
+		<x-m>0.1228</x-m>
+		<y-m>-0.0358</y-m>
+		<z-m>0.0014</z-m>
+		<heading-deg>90</heading-deg>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>xy-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>/instrumentation/fmcHelp/disp[7]/desc</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
 
 </PropertyList>
