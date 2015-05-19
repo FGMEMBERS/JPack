@@ -546,7 +546,7 @@
 		</axis>
 	</animation>
 
-<!-- EGT Digits -->
+	<!-- EGT Digits -->
 
 	<animation>
    		<type>textranslate</type>
