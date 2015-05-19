@@ -3,7 +3,8 @@
 <!--
     ================================================================
     Autopilot SYS8 (originally for Voodoomaster test platform)
-    JWOCKY: April, 2015, adapted for 767-Sentry and variants
+    JWOCKY: April 2015, adapted for 767-Sentry and variants
+	    May 2015 in 727-230-JSB(copy), StratoFortressH, RA-5
     ================================================================
 -->
 
@@ -15,14 +16,6 @@
 		<input>/position/altitude-ft</input>
 		<output>/autopilot/internal/altitude-5-sec-ahead</output>
 		<seconds>2.0</seconds>
-		<filter-gain>0.1</filter-gain>
-	</predict-simple>
-
-	<predict-simple>
-		<name>predicted tru-heading 5 seconds ahead</name>
-		<input>/autopilot/internal/true-heading-error-deg</input>
-		<output>/autopilot/internal/true-heading-5-sec-ahead</output>
-		<seconds>8</seconds>
 		<filter-gain>0.1</filter-gain>
 	</predict-simple>
 
@@ -106,15 +99,6 @@
 		<type>noise-spike</type>
 		<input>/autopilot/internal/nav1-error-5-sec-ahead</input>
 		<output>/autopilot/internal/nav1-heading-error-deg-filtered</output>
-		<max-rate-of-change>30.0</max-rate-of-change>
-	</filter>
-
-	<filter>
-		<name>True heading error Filter</name>
-		<debug>false</debug>
-		<type>noise-spike</type>
-		<input>/autopilot/internal/true-heading-5-sec-ahead</input>
-		<output>/autopilot/internal/true-heading-error-deg-filtered</output>
 		<max-rate-of-change>30.0</max-rate-of-change>
 	</filter>
   
@@ -344,7 +328,7 @@
 					<value>true-heading-hold</value>
 				</equals>
 			</condition>
-			<property>/autopilot/internal/true-heading-error-deg-filtered</property>
+			<property>/autopilot/internal/true-heading-error-deg</property>
 		</input>
 		<input>
 			<condition>
@@ -353,7 +337,7 @@
 					<value>nav1-hold</value>
 				</equals>
 			</condition>
-			<prop>/autopilot/internal/nav1-heading-error-deg-filtered</prop>
+			<prop>/autopilot/internal/nav1-heading-error-deg</prop>
 		</input>
 		<output>
 			<property>/autopilot/internal/target-roll-deg</property>
@@ -424,7 +408,7 @@
 			<alpha>0.1</alpha>	<!-- low pass filter weighing factor -->
 			<gamma>0.0</gamma>	<!-- input value weighing factor for -->
 			<!-- unfiltered derivative error -->
-			<Ti>25</Ti>        	<!-- integrator time -->
+			<Ti>10</Ti>        	<!-- integrator time -->
 			<Td>0.00001</Td>     	<!-- derivator time -->
 			<u_min>-0.35</u_min> 	<!-- minimum output clamp -->
 			<u_max>0.35</u_max>  	<!-- maximum output clamp -->
@@ -658,7 +642,7 @@
 			<!-- unfiltered derivative error -->
 			<Ti>2.0</Ti>       <!-- integrator time -->
 			<Td>0.00001</Td>    <!-- derivator time -->
-			<u_min>-0.0005</u_min> <!-- minimum output clamp -->
+			<u_min>-0.50</u_min> <!-- minimum output clamp -->
 			<u_max>0.50</u_max>  <!-- maximum output clamp -->
 		</config>
 	</pid-controller>
