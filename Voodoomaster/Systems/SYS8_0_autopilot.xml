@@ -28,21 +28,6 @@
 	</predict-simple>
   
 	<filter>
-		<name>Bank Angle Limiter</name>
-		<type>gain</type>
-		<debug>false</debug>
-		<input>
-			<property>/velocities/airspeed-kt</property>
-		</input>
-		<output>
-			<property>/autopilot/internal/bank-angle-limit-deg</property>
-		</output>
-		<gain>0.15</gain>
-		<u_min>20.0</u_min>
-		<u_max>45.0</u_max>
-	</filter>
-  
-	<filter>
 		<name>Aileron Command Limiter</name>
 		<type>gain</type>
 		<debug>false</debug>
@@ -344,7 +329,7 @@
 		</output>
 		<gain>2</gain>
 		<u_min>
-			<property>/autopilot/internal/bank-angle-limit-deg</property>
+			<property>/autopilot/settings/bank-angle-limit-deg</property>
 			<scale>-1.0</scale>
 		</u_min>
 		<u_max>
