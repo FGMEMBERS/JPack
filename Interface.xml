@@ -117,6 +117,7 @@
 	<voodoomaster include="Voodoomaster/Voodoomaster-Version.xml">
 		<steering-mode-rudder type="bool">true</steering-mode-rudder>
 		<steering-mode-aileron type="bool">false</steering-mode-aileron>
+		<migraine-mode type="bool">false</migraine-mode>
 	</voodoomaster>
 
 	<skynet include="SkyNet/SkyNet-Version.xml">
