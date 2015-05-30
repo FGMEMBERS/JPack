@@ -9,6 +9,7 @@
 					<enabled type="bool">true</enabled>
 
 					<item>
+						<name>Pushback</name>
 						<label>Pushback</label>
 						<binding>
 							<command>nasal</command>
@@ -23,7 +24,8 @@
 					</item>
 		
 					<item>
-						<label>Steering configuration</label>
+						<name>MigraineMode</name>
+						<label>SteeringConfiguration</label>
 						<binding>
 							<command>nasal</command>
 							<script>
@@ -37,6 +39,16 @@
 					</item>
 
 					<item>
+						<name>MigraineMode</name>
+						<label>Migraine mode</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>voodoomaster/migraine-mode</property>
+						</binding>
+					</item>
+
+					<item>
+						<name>GroundCrew</name>
 						<label>Ground Crew</label>
 						<binding>
 							<command>nasal</command>
@@ -50,11 +62,14 @@
 						</binding>
 					</item>
 				</menu>
+
 				<menu n="102">
+					<name>SkyNet</name>
 					<label>SkyNet</label>
 					<enabled type="bool">true</enabled>
 	
 					<item>
+						<name>SkyNetLogin</name>
 						<label>Login</label>
 						<enabled type="bool">true</enabled>
 						<binding>
@@ -67,6 +82,7 @@
 					</item>
 
 					<item>
+						<name>SkyNetLogout</name>
 						<label>Logout</label>
 						<enabled type="bool">false</enabled>
 						<binding>
