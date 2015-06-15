@@ -388,7 +388,7 @@
 			<property>/controls/flight/aileron</property>
 		</output>
 		<config>
-			<Kp>0.05</Kp>		<!-- proportional gain -->
+			<Kp>0.10</Kp>		<!-- proportional gain -->
 			<beta>1.0</beta>	<!-- input value weighing factor -->
 			<alpha>0.1</alpha>	<!-- low pass filter weighing factor -->
 			<gamma>0.0</gamma>	<!-- input value weighing factor for -->
@@ -425,10 +425,10 @@
 			<beta>1.0</beta>    <!-- input value weighing factor -->
 			<alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
 			<gamma>0.0</gamma>  <!-- input value weighing factor for -->
-			<Ti>100.0</Ti>       <!-- integrator time  10.0 -->
+			<Ti>10.0</Ti>       <!-- integrator time  10.0 -->
 			<Td>0.000001</Td>    <!-- derivator time -->
-			<u_min>-0.35</u_min> <!-- minimum output clamp -->
-			<u_max>0.35</u_max>
+			<u_min>-0.45</u_min> <!-- minimum output clamp -->
+			<u_max>0.45</u_max>
 		</config>
 	</pid-controller>
 
