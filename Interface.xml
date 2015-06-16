@@ -114,13 +114,13 @@
 		</jsbsim>
 	</fdm>
 
-	<voodoomaster include="Aircraft/JPack/Voodoomaster/Voodoomaster-Version.xml">
+	<voodoomaster include="Voodoomaster/Voodoomaster-Version.xml">
 		<steering-mode-rudder type="bool">true</steering-mode-rudder>
 		<steering-mode-aileron type="bool">false</steering-mode-aileron>
 		<migraine-mode type="bool">false</migraine-mode>
 	</voodoomaster>
 
-	<skynet include="Aircraft/JPack/SkyNet/SkyNet-Version.xml">
+	<skynet include="SkyNet/SkyNet-Version.xml">
 		<username type="string">"*"</username>
 		<callsign type="string">"*"</callsign>
 		<password type="string">"****"</password>
