@@ -24,7 +24,7 @@
 					</item>
 		
 					<item>
-						<name>MigraineMode</name>
+						<name>SteeringMode</name>
 						<label>SteeringConfiguration</label>
 						<binding>
 							<command>nasal</command>
@@ -113,11 +113,31 @@
 			</systems>
 		</jsbsim>
 	</fdm>
+  
+	<autopilot>
+
+		<settings>
+			<kts-mach-select type="string">kts</kts-mach-select>
+			<max-pitch type="float">4.0</max-pitch>
+			<min-pitch type="float">-4.0</min-pitch>
+			<bank-angle-limit-deg type="int">35</bank-angle-limit-deg>
+		</settings>
+
+		<internal>
+			<target-pitch-deg type="float">0.00</target-pitch-deg>
+			<max-pitch type="float">4.0</max-pitch>
+			<min-pitch type="float">-4.0</min-pitch>
+		</internal>
+
+	</autopilot>
 
 	<voodoomaster include="Voodoomaster/Voodoomaster-Version.xml">
 		<steering-mode-rudder type="bool">true</steering-mode-rudder>
 		<steering-mode-aileron type="bool">false</steering-mode-aileron>
 		<migraine-mode type="bool">false</migraine-mode>
+
+		<menubar2 include="Aircraft/JPack/Voodoomaster/Dialogs/menubar.xml"></menubar2>
+
 	</voodoomaster>
 
 	<skynet include="SkyNet/SkyNet-Version.xml">

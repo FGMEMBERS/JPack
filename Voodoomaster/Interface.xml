@@ -30,6 +30,10 @@
 		</menubar>
 	</sim>
 
+	<voodoomaster>
+		<model-direction type="float">0.00</model-direction>
+	</voodoomaster>
+	
 	<skynet include="SkyNet-Version.xml">
 		<username type="string">"*"</username>
 		<callsign type="string">"*"</callsign>
