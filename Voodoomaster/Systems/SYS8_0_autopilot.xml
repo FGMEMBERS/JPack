@@ -26,6 +26,14 @@
 		<seconds>8</seconds>
 		<filter-gain>0.1</filter-gain>
 	</predict-simple>
+
+	<predict-simple>
+		<name>predicted mach speed</name>
+		<input>/velocities/mach</input>
+		<output>/autopilot/internal/lookahead-5sec-mach</output>
+		<seconds>5</seconds>
+		<filter-gain>0.1</filter-gain>
+	</predict-simple>
   
 	<filter>
 		<name>Aileron Command Limiter</name>
@@ -558,47 +566,25 @@
 
 	<!-- Auto throttle -->
 	<pid-controller>
-		<name>Auto Throttle (5 sec lookahead)</name>
+		<name>Auto Throttle (KIAS)</name>
 		<debug>false</debug>
 		<enable>
-			<prop>/autopilot/locks/speed</prop>
-			<value>speed-with-throttle</value>
+			<and>
+				<equals>
+					<prop>/autopilot/locks/speed</prop>
+					<value>speed-with-throttle</value>
+				</equals>
+				<equals>
+					<property>/autopilot/settings/kts-mach-select</property>
+					<value>kts</value>
+				</equals>
+			</and>
 		</enable>
 		<input>
-			<condition>
-				<equals>
-					<property>/autopilot/settings/kts-mach-select</property>
-					<value>kts</value>
-				</equals>
-			</condition>
 			<prop>/autopilot/internal/lookahead-5-sec-airspeed-kt</prop>
 		</input>
-		<input>
-			<condition>
-				<equals>
-					<property>/autopilot/settings/kts-mach-select</property>
-					<value>mach</value>
-				</equals>
-			</condition>
-			<prop>/velocities/mach</prop>
-		</input>
 		<reference>
-			<condition>
-				<equals>
-					<property>/autopilot/settings/kts-mach-select</property>
-					<value>kts</value>
-				</equals>
-			</condition>
 			<prop>/autopilot/settings/target-speed-kt</prop>
-		</reference>
-		<reference>
-			<condition>
-				<equals>
-					<property>/autopilot/settings/kts-mach-select</property>
-					<value>mach</value>
-				</equals>
-			</condition>
-			<prop>/autopilot/settings/target-speed-mach</prop>
 		</reference>
 		<output>
 			<prop>/controls/engines/engine[0]/throttle</prop>
@@ -615,9 +601,56 @@
 			<beta>1.0</beta>    <!-- input value weighing factor -->
 			<alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
 			<gamma>0.0</gamma>  <!-- input value weighing factor for -->
-		zz	<!-- unfiltered derivative error -->
+			<!-- unfiltered derivative error -->
 			<Ti>3.0</Ti>        <!-- integrator time -->
 			<Td>0.001</Td>    <!-- derivator time -->
+			<u_min>0.0</u_min>  <!-- minimum output clamp -->
+			<u_max>1.00</u_max>  <!-- maximum output clamp -->
+		</config>
+	</pid-controller>
+
+	<!-- Auto throttle -->
+	<pid-controller>
+		<name>Auto Throttle (MACH)</name>
+		<debug>false</debug>
+		<enable>
+			<and>
+				<equals>
+					<prop>/autopilot/locks/speed</prop>
+					<value>speed-with-throttle</value>
+				</equals>
+				<equals>
+					<property>/autopilot/settings/kts-mach-select</property>
+					<value>mach</value>
+				</equals>
+			</and>
+		</enable>
+		<input>
+			<prop>/autopilot/internal/lookahead-5sec-mach</prop>
+			<factor>2000</factor>
+		</input>
+		<reference>
+			<prop>/autopilot/settings/target-speed-mach</prop>
+			<factor>2000</factor>
+		</reference>
+		<output>
+			<prop>/controls/engines/engine[0]/throttle</prop>
+			<prop>/controls/engines/engine[1]/throttle</prop>
+			<prop>/controls/engines/engine[2]/throttle</prop>
+			<prop>/controls/engines/engine[3]/throttle</prop>
+			<prop>/controls/engines/engine[4]/throttle</prop>
+			<prop>/controls/engines/engine[5]/throttle</prop>
+			<prop>/controls/engines/engine[6]/throttle</prop>
+			<prop>/controls/engines/engine[7]/throttle</prop>
+		</output>
+		<config>
+			<Kp>0.10</Kp>        <!-- proportional gain -->
+			<beta>1.0</beta>    <!-- input value weighing factor -->
+			<alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+			<gamma>0.0</gamma>  <!-- input value weighing factor for -->
+			<!-- unfiltered derivative error -->
+			<Ti>0.01</Ti>        <!-- integrator time -->
+			<Td>0.01</Td>    <!-- derivator time -->
 			<u_min>0.0</u_min>  <!-- minimum output clamp -->
 			<u_max>1.00</u_max>  <!-- maximum output clamp -->
 		</config>

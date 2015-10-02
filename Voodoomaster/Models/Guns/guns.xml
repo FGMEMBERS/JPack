@@ -2,24 +2,24 @@
 
 <PropertyList>
 
-  <path>guns.ac</path>
+	<path>guns.ac</path>
 
-  <animation>
-    <!-- Objets opaques -->
-    <object-name>guns</object-name>
+	<animation>
+		<!-- Opaque Objects -->
+		<object-name>guns</object-name>
 
-    <!-- Objets transparents -->
-  </animation>
+		<!-- Transparent Objects -->
+	</animation>
 
-  <animation>
-    <type>material</type>
-    <object-name>guns</object-name>
-    <emission>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
-      <red>   0.005 </red>
-      <green> 0.005 </green>
-      <blue>  0.005 </blue>
-    </emission>
-  </animation>
+	<animation>
+		<type>material</type>
+		<object-name>guns</object-name>
+		<emission>
+			<factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+			<red>   0.005 </red>
+			<green> 0.005 </green>
+			<blue>  0.005 </blue>
+		</emission>
+	</animation>
 
 </PropertyList>
