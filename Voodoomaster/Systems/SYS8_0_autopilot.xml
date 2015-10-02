@@ -569,16 +569,18 @@
 		<name>Auto Throttle (KIAS)</name>
 		<debug>false</debug>
 		<enable>
-			<and>
-				<equals>
-					<prop>/autopilot/locks/speed</prop>
-					<value>speed-with-throttle</value>
-				</equals>
-				<equals>
-					<property>/autopilot/settings/kts-mach-select</property>
-					<value>kts</value>
-				</equals>
-			</and>
+			<condition>
+				<and>
+					<equals>
+						<property>/autopilot/locks/speed</property>
+						<value>speed-with-throttle</value>
+					</equals>
+					<equals>
+						<property>/autopilot/settings/kts-mach-select</property>
+						<value>kts</value>
+					</equals>
+				</and>
+			</condition>
 		</enable>
 		<input>
 			<prop>/autopilot/internal/lookahead-5-sec-airspeed-kt</prop>
@@ -614,16 +616,18 @@
 		<name>Auto Throttle (MACH)</name>
 		<debug>false</debug>
 		<enable>
-			<and>
-				<equals>
-					<prop>/autopilot/locks/speed</prop>
-					<value>speed-with-throttle</value>
-				</equals>
-				<equals>
-					<property>/autopilot/settings/kts-mach-select</property>
-					<value>mach</value>
-				</equals>
-			</and>
+			<condition>
+				<and>
+					<equals>
+						<property>/autopilot/locks/speed</property>
+						<value>speed-with-throttle</value>
+					</equals>
+					<equals>
+						<property>/autopilot/settings/kts-mach-select</property>
+						<value>mach</value>
+					</equals>
+				</and>
+			</condition>
 		</enable>
 		<input>
 			<prop>/autopilot/internal/lookahead-5sec-mach</prop>
@@ -644,15 +648,14 @@
 			<prop>/controls/engines/engine[7]/throttle</prop>
 		</output>
 		<config>
-			<Kp>0.10</Kp>        <!-- proportional gain -->
+			<Kp>0.10</Kp>        <!-- proportional gain  -->
 			<beta>1.0</beta>    <!-- input value weighing factor -->
 			<alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
-			<gamma>0.0</gamma>  <!-- input value weighing factor for -->
-			<!-- unfiltered derivative error -->
+			<gamma>0.0</gamma>  <!-- input value weighing factor for unfiltered derivative error -->
 			<Ti>0.01</Ti>        <!-- integrator time -->
-			<Td>0.01</Td>    <!-- derivator time -->
-			<u_min>0.0</u_min>  <!-- minimum output clamp -->
-			<u_max>1.00</u_max>  <!-- maximum output clamp -->
+			<Td>0.01</Td>    <!-- derivator time  -->
+			<u_min>0.0</u_min>  <!-- minimum output clamp  -->
+			<u_max>1.00</u_max>  <!-- maximum output clamp  -->
 		</config>
 	</pid-controller>
 
