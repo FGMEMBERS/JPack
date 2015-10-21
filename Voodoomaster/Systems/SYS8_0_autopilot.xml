@@ -23,7 +23,7 @@
 		<name>predicted nav1-error 5 seconds ahead</name>
 		<input>/autopilot/internal/nav1-track-error-deg</input>
 		<output>/autopilot/internal/nav1-error-5-sec-ahead</output>
-		<seconds>8</seconds>
+		<seconds>12</seconds>
 		<filter-gain>0.1</filter-gain>
 	</predict-simple>
 
@@ -450,7 +450,7 @@
 					<value>nav1-hold</value>
 				</equals>
 			</condition>
-			<prop>/autopilot/internal/nav1-heading-error-deg</prop>
+			<prop>/autopilot/internal/nav1-heading-error-deg-filtered</prop>
 		</input>
 		<output>
 			<property>/autopilot/internal/target-roll-deg</property>
