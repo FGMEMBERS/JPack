@@ -455,7 +455,7 @@
 		<output>
 			<property>/autopilot/internal/target-roll-deg</property>
 		</output>
-		<gain>2</gain>
+		<gain>0.5</gain>
 		<u_min>
 			<property>/autopilot/settings/bank-angle-limit-deg</property>
 			<scale>-1.0</scale>

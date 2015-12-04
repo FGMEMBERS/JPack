@@ -32,6 +32,7 @@
 
 	<voodoomaster>
 		<model-direction type="float">0.00</model-direction>
+		<engines type="int">8</engines>
 	</voodoomaster>
 	
 	<skynet include="SkyNet-Version.xml">

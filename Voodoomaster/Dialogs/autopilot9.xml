@@ -23,7 +23,7 @@
 		<empty><stretch>1</stretch></empty>
 
 		<text>
-			<label>Autopilot Settings (SYS8)</label>
+			<label>Autopilot Settings (SYS9)</label>
 		</text>
 
 		<empty><stretch>1</stretch></empty>
@@ -137,7 +137,7 @@
 			# - second entry is a list of available options for the /autopilot/locks/* property
 			#   and used as radio button state property; the first list entry is used as default
 			#
-			var hdg = Group.new("heading",  ["dg-heading-hold", "wing-leveler", "true-heading-hold", "nav1-hold"]);
+			var hdg = Group.new("heading",  ["wing-leveler", "roll-hold", "dg-heading-hold", "true-heading-hold", "nav1-hold"]);
 			var vel = Group.new("speed",    ["speed-with-throttle", "speed-with-pitch-trim"]);
 			var alt = Group.new("altitude", ["altitude-hold", "vertical-speed-hold", "pitch-hold", "aoa-hold", "agl-hold", "gs1-hold"]);
 		</open>
@@ -191,13 +191,38 @@
 					</binding>
 				</radio>
 				<text>
-					<label>Heading Bug</label>
+					<label>Roll Hold</label>
 					<halign>right</halign>
 					<row>1</row>
 					<col>0</col>
 				</text>
 				<radio>
 					<row>1</row>
+					<col>1</col>
+					<property>/sim/gui/dialogs/autopilot/roll-hold</property>
+					<live>true</live>
+					<binding>
+						<command>nasal</command>
+						<script>hdg.set("roll-hold")</script>
+					</binding>
+				</radio>
+				<input>
+					<row>1</row>
+					<col>2</col>
+					<property>/autopilot/settings/target-roll-deg</property>
+					<live>true</live>
+					<binding>
+						<command>dialog-apply</command>
+					</binding>
+				</input>
+				<text>
+					<label>Heading Bug</label>
+					<halign>right</halign>
+					<row>2</row>
+					<col>0</col>
+				</text>
+				<radio>
+					<row>2</row>
 					<col>1</col>
 					<property>/sim/gui/dialogs/autopilot/dg-heading-hold</property>
 					<live>true</live>
@@ -207,7 +232,7 @@
 					</binding>
 				</radio>
 				<input>
-					<row>1</row>
+					<row>2</row>
 					<col>2</col>
 					<property>/autopilot/settings/heading-bug-deg</property>
 					<live>true</live>
@@ -218,7 +243,7 @@
 				<text>
 					<label>True Heading</label>
 					<halign>right</halign>
-					<row>2</row>
+					<row>3</row>
 					<col>0</col>
 					<visible>
 						<not>
@@ -233,11 +258,11 @@
 					</visible>
 					<label>GPS/FMS Heading</label>
 					<halign>right</halign>
-					<row>2</row>
+					<row>3</row>
 					<col>0</col>
 				</text>
 				<radio>
-					<row>2</row>
+					<row>3</row>
 					<col>1</col>
 					<property>/sim/gui/dialogs/autopilot/true-heading-hold</property>
 					<live>true</live>
@@ -252,7 +277,7 @@
 							<property>/autopilot/settings/gps-driving-true-heading</property>
 						</not>
 					</visible>
-					<row>2</row>
+					<row>3</row>
 					<col>2</col>
 					<property>/autopilot/settings/true-heading-deg</property>
 					<live>true</live>
@@ -266,7 +291,7 @@
 						<property>/autopilot/settings/gps-driving-true-heading</property>
 					</visible>
 					<halign>right</halign>
-					<row>2</row>
+					<row>3</row>
 					<col>2</col>
 					<label>MMMM</label>
 					<format>%3.0f*</format>
@@ -276,11 +301,11 @@
 				<text>
 					<label>NAV1 CDI Course</label>
 					<halign>right</halign>
-					<row>3</row>
+					<row>4</row>
 					<col>0</col>
 				</text>
 				<radio>
-					<row>3</row>
+					<row>4</row>
 					<col>1</col>
 					<property>/sim/gui/dialogs/autopilot/nav1-hold</property>
 					<live>true</live>
@@ -289,6 +314,16 @@
 						<script>hdg.set("nav1-hold")</script>
 					</binding>
 				</radio>
+				<empty>
+					<row>5</row>
+					<col>0</col>
+					<stretch>1</stretch>
+				</empty>
+				<empty>
+					<row>6</row>
+					<col>0</col>
+					<stretch>1</stretch>
+				</empty>
 			</group>
 		</group> <!-- End of Heading -->
 
@@ -418,203 +453,299 @@
 			</group>
 		</group>  <!-- End of Speed -->
 
-        <vrule/>
-        <group>
-            <!-- Pitch/Altitude -->
-            <layout>vbox</layout>
-            <group>
-                <layout>hbox</layout>
-                <checkbox>
-                    <label>Pitch/Altitude Control</label>
-                    <halign>fill</halign>
-                    <property>/sim/gui/dialogs/autopilot/altitude-active</property>
-                    <live>true</live>
-                    <binding>
-                        <command>dialog-apply</command>
-                    </binding>
-                    <binding>
-                        <command>nasal</command>
-                        <script>alt.enable()</script>
-                    </binding>
-                </checkbox>
-            </group>
-            <group>
-                <layout>table</layout>
-                <text>
-                    <label>Vertical Speed</label>
-                    <halign>right</halign>
-                    <row>0</row>
-                    <col>0</col>
-                </text>
-                <radio>
-                    <row>0</row>
-                    <col>1</col>
-                    <property>/sim/gui/dialogs/autopilot/vertical-speed-hold</property>
-                    <live>true</live>
-                    <binding>
-                        <command>nasal</command>
-                        <script>alt.set("vertical-speed-hold")</script>
-                    </binding>
-                </radio>
-                <input>
-                    <row>0</row>
-                    <col>2</col>
-                    <property>/autopilot/settings/vertical-speed-fpm</property>
-                    <live>true</live>
-                    <binding>
-                        <command>dialog-apply</command>
-                    </binding>
-                </input>
-                <text>
-                    <label>Pitch Hold</label>
-                    <halign>right</halign>
-                    <row>1</row>
-                    <col>0</col>
-                </text>
-                <radio>
-                    <row>1</row>
-                    <col>1</col>
-                    <property>/sim/gui/dialogs/autopilot/pitch-hold</property>
-                    <live>true</live>
-                    <binding>
-                        <command>nasal</command>
-                        <script>alt.set("pitch-hold")</script>
-                    </binding>
-                </radio>
-                <input>
-                    <row>1</row>
-                    <col>2</col>
-                    <property>/autopilot/settings/target-pitch-deg</property>
-                    <live>true</live>
-                    <binding>
-                        <command>dialog-apply</command>
-                    </binding>
-                </input>
-                <text>
-                    <label>AoA Hold</label>
-                    <halign>right</halign>
-                    <row>2</row>
-                    <col>0</col>
-                </text>
-                <radio>
-                    <row>2</row>
-                    <col>1</col>
-                    <property>/sim/gui/dialogs/autopilot/aoa-hold</property>
-                    <live>true</live>
-                    <binding>
-                        <command>nasal</command>
-                        <script>alt.set("aoa-hold")</script>
-                    </binding>
-                </radio>
-                <input>
-                    <row>2</row>
-                    <col>2</col>
-                    <property>/autopilot/settings/target-aoa-deg</property>
-                    <live>true</live>
-                    <binding>
-                        <command>dialog-apply</command>
-                    </binding>
-                </input>
-                <text>
-                    <label>Altitude Hold</label>
-                    <halign>right</halign>
-                    <row>3</row>
-                    <col>0</col>
-                </text>
-                <radio>
-                    <row>3</row>
-                    <col>1</col>
-                    <property>/sim/gui/dialogs/autopilot/altitude-hold</property>
-                    <live>true</live>
-                    <binding>
-                        <command>nasal</command>
-                        <script>alt.set("altitude-hold")</script>
-                    </binding>
-                </radio>
-                <input>
-                    <row>3</row>
-                    <col>2</col>
-                    <property>/autopilot/settings/target-altitude-ft</property>
-                    <live>true</live>
-                    <binding>
-                        <command>dialog-apply</command>
-                    </binding>
-                </input>
-                <text>
-                    <label>AGL Hold</label>
-                    <halign>right</halign>
-                    <row>4</row>
-                    <col>0</col>
-                </text>
-                <radio>
-                    <row>4</row>
-                    <col>1</col>
-                    <property>/sim/gui/dialogs/autopilot/agl-hold</property>
-                    <live>true</live>
-                    <binding>
-                        <command>nasal</command>
-                        <script>alt.set("agl-hold")</script>
-                    </binding>
-                </radio>
-                <input>
-                    <row>4</row>
-                    <col>2</col>
-                    <property>/autopilot/settings/target-agl-ft</property>
-                    <live>true</live>
-                    <binding>
-                        <command>dialog-apply</command>
-                    </binding>
-                </input>
-                <text>
-                    <label>NAV1 Glideslope</label>
-                    <halign>right</halign>
-                    <row>5</row>
-                    <col>0</col>
-                </text>
-                <radio>
-                    <row>5</row>
-                    <col>1</col>
-                    <property>/sim/gui/dialogs/autopilot/gs1-hold</property>
-                    <live>true</live>
-                    <binding>
-                        <command>nasal</command>
-                        <script>alt.set("gs1-hold")</script>
-                    </binding>
-                </radio>
-            </group>
-            <empty>
-                <stretch>true</stretch>
-            </empty>
-        </group>
-        <!-- End of Pitch/Altitude VBox -->
-    </group>
-    <hrule/>
-    <group>
-        <!-- Passive Mode Toggle -->
-        <layout>hbox</layout>
-        <checkbox>
-            <label>FlightDirector Mode</label>
-            <halign>center</halign>
-            <property>/autopilot/locks/passive-mode</property>
-            <live>true</live>
-            <binding>
-                <command>dialog-apply</command>
-            </binding>
-            <binding>
-                <command>property-toggle</command>
-            </binding>
-        </checkbox>
-    </group>
+		<vrule/>
 
-  <hrule/>
+		<group>
+			<!-- Pitch/Altitude -->
+			<layout>vbox</layout>
 
-  <button>
-    <legend>Close</legend>
-    <default>true</default>
-    <key>Esc</key>
-    <binding>
-      <command>dialog-close</command>
-    </binding>
-  </button>
+			<group>
+				<layout>hbox</layout>
+				<checkbox>
+					<label>Pitch/Altitude Control</label>
+					<halign>fill</halign>
+					<property>/sim/gui/dialogs/autopilot/altitude-active</property>
+					<live>true</live>
+					<binding>
+						<command>dialog-apply</command>
+					</binding>
+					<binding>
+						<command>nasal</command>
+						<script>alt.enable()</script>
+					</binding>
+				</checkbox>
+			</group>
+
+			<group>
+				<layout>table</layout>
+				<text>
+					<label>Vertical Speed</label>
+					<halign>right</halign>
+					<row>0</row>
+					<col>0</col>
+				</text>
+				<radio>
+					<row>0</row>
+					<col>1</col>
+					<property>/sim/gui/dialogs/autopilot/vertical-speed-hold</property>
+					<live>true</live>
+					<binding>
+						<command>nasal</command>
+						<script>alt.set("vertical-speed-hold")</script>
+					</binding>
+				</radio>
+				<input>
+					<row>0</row>
+					<col>2</col>
+					<property>/autopilot/settings/vertical-speed-fpm</property>
+					<live>true</live>
+					<binding>
+						<command>dialog-apply</command>
+					</binding>
+				</input>
+
+				<text>
+					<label>Pitch Hold</label>
+					<halign>right</halign>
+					<row>1</row>
+					<col>0</col>
+				</text>
+				<radio>
+					<row>1</row>
+					<col>1</col>
+					<property>/sim/gui/dialogs/autopilot/pitch-hold</property>
+					<live>true</live>
+					<binding>
+						<command>nasal</command>
+						<script>alt.set("pitch-hold")</script>
+					</binding>
+				</radio>
+				<input>
+					<row>1</row>
+					<col>2</col>
+					<property>/autopilot/settings/target-pitch-deg</property>
+					<live>true</live>
+					<binding>
+						<command>dialog-apply</command>
+					</binding>
+				</input>
+				<text>
+					<label>AoA Hold</label>
+					<halign>right</halign>
+					<row>2</row>
+					<col>0</col>
+				</text>
+				<radio>
+					<row>2</row>
+					<col>1</col>
+					<property>/sim/gui/dialogs/autopilot/aoa-hold</property>
+					<live>true</live>
+					<binding>
+						<command>nasal</command>
+						<script>alt.set("aoa-hold")</script>
+					</binding>
+				</radio>
+				<input>
+					<row>2</row>
+					<col>2</col>
+					<property>/autopilot/settings/target-aoa-deg</property>
+					<live>true</live>
+					<binding>
+						<command>dialog-apply</command>
+					</binding>
+				</input>
+				<text>
+					<label>Altitude Hold</label>
+					<halign>right</halign>
+					<row>3</row>
+					<col>0</col>
+				</text>
+				<radio>
+					<row>3</row>
+					<col>1</col>
+					<property>/sim/gui/dialogs/autopilot/altitude-hold</property>
+					<live>true</live>
+					<binding>
+						<command>nasal</command>
+						<script>alt.set("altitude-hold")</script>
+					</binding>
+				</radio>
+				<input>
+					<row>3</row>
+					<col>2</col>
+					<property>/autopilot/settings/target-altitude-ft</property>
+					<live>true</live>
+					<binding>
+						<command>dialog-apply</command>
+					</binding>
+				</input>
+				<text>
+					<label>AGL Hold</label>
+					<halign>right</halign>
+					<row>4</row>
+					<col>0</col>
+				</text>
+				<radio>
+					<row>4</row>
+					<col>1</col>
+					<property>/sim/gui/dialogs/autopilot/agl-hold</property>
+					<live>true</live>
+					<binding>
+						<command>nasal</command>
+						<script>alt.set("agl-hold")</script>
+					</binding>
+				</radio>
+				<input>
+					<row>4</row>
+					<col>2</col>
+					<property>/autopilot/settings/target-agl-ft</property>
+					<live>true</live>
+					<binding>
+						<command>dialog-apply</command>
+					</binding>
+				</input>
+				<text>
+					<label>NAV1 Glideslope</label>
+					<halign>right</halign>
+					<row>5</row>
+					<col>0</col>
+				</text>
+				<radio>
+					<row>5</row>
+					<col>1</col>
+					<property>/sim/gui/dialogs/autopilot/gs1-hold</property>
+					<live>true</live>
+					<binding>
+						<command>nasal</command>
+						<script>alt.set("gs1-hold")</script>
+					</binding>
+				</radio>
+				<empty>
+					<row>6</row>
+					<col>0</col>
+					<stretch>1</stretch>
+				</empty>
+
+			</group>
+		</group>   <!-- End of Pitch/Altitude VBox -->
+
+		<vrule/>
+
+		<group>
+			<!-- Other Settings -->
+			<layout>vbox</layout>
+
+			<group>
+				<layout>hbox</layout>
+				<text>
+					<label>Other Settings</label>
+					<halign>left</halign>
+				</text>
+			</group>
+
+			<group>
+				<layout>table</layout>
+
+				<text>
+					<label>Bank Angle Ltr</label>
+					<halign>right</halign>
+					<row>0</row>
+					<col>0</col>
+				</text>
+				<input>
+					<row>0</row>
+					<col>1</col>
+					<property>/autopilot/settings/bank-angle-limit-deg</property>
+					<live>true</live>
+					<binding>
+						<command>dialog-apply</command>
+					</binding>
+				</input>
+
+				<text>
+					<label>Max. Pitch</label>
+					<halign>right</halign>
+					<row>1</row>
+					<col>0</col>
+				</text>
+				<input>
+					<row>1</row>
+					<col>1</col>
+					<property>/autopilot/settings/max-pitch</property>
+					<live>true</live>
+					<binding>
+						<command>dialog-apply</command>
+					</binding>
+				</input>
+
+				<text>
+					<label>Min. Pitch</label>
+					<halign>right</halign>
+					<row>2</row>
+					<col>0</col>
+				</text>
+				<input>
+					<row>2</row>
+					<col>1</col>
+					<property>/autopilot/settings/min-pitch</property>
+					<live>true</live>
+					<binding>
+						<command>dialog-apply</command>
+					</binding>
+				</input>
+				<empty>
+					<row>3</row>
+					<col>0</col>
+					<stretch>1</stretch>
+				</empty>
+				<empty>
+					<row>4</row>
+					<col>0</col>
+					<stretch>1</stretch>
+				</empty>
+				<empty>
+					<row>5</row>
+					<col>0</col>
+					<stretch>1</stretch>
+				</empty>
+				<empty>
+					<row>6</row>
+					<col>0</col>
+					<stretch>1</stretch>
+				</empty>
+			</group>
+		</group> <!-- end of Other Settings -->
+	
+
+	</group>
+
+	<hrule/>
+
+	<group> <!-- Passive Mode Toggle -->
+		<layout>hbox</layout>
+		<checkbox>
+			<label>FlightDirector Mode</label>
+			<halign>center</halign>
+			<property>/autopilot/locks/passive-mode</property>
+			<live>true</live>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+			</binding>
+		</checkbox>
+	</group>
+
+	<hrule/>
+
+	<button>
+		<legend>Close</legend>
+		<default>true</default>
+		<key>Esc</key>
+		<binding>
+			<command>dialog-close</command>
+		</binding>
+	</button>
 
 </PropertyList>
